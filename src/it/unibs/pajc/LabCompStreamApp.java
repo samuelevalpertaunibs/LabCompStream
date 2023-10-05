@@ -8,8 +8,8 @@ public class LabCompStreamApp {
         IntStream
                 .range(0, 26)
                 .mapToObj(x -> String.format("%c_%d", 'a'+x, x))
-                .filter((x) -> (int)x.charAt(0) >= 'e')
-                .filter((x) -> (int)x.charAt(0) <= 'o')
+                .filter((x) -> x.charAt(0) >= 'e')
+                .filter((x) -> x.charAt(0) <= 'o')
                 .forEach((x) -> System.out.printf("%c\n", x.charAt(0)));
     }
 }
