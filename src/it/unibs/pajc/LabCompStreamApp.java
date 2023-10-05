@@ -7,9 +7,13 @@ public class LabCompStreamApp {
 
         IntStream
                 .range(0, 26)
-                .mapToObj(x -> String.format("%c_%d", 'a'+x, x))
-                .filter((x) -> x.charAt(0) >= 'e')
-                .filter((x) -> x.charAt(0) <= 'o')
-                .forEach((x) -> System.out.printf("%c\n", x.charAt(0)));
+                .mapToObj(x -> String.format("%c_%02d", 'a'+x, x))
+                .filter(s -> {
+                    char ch = s.charAt(0);
+                    return (ch >= 'e' && ch <= 'o');
+                })
+                .map(s -> s.substring(s.length() - 2, s.length()))
+                .mapToInt(Integer::parseInt)
+                .forEach(System.out::println);
     }
 }
