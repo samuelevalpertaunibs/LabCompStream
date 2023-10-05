@@ -7,9 +7,7 @@ public class LabCompStreamApp {
 
         IntStream
                 .range(1, 20)
-                .filter((a) -> (a % 2 == 0))
-                .map((a) -> (int) Math.pow(a, 2))
-                .map((a) -> Math.min(100, a))
+                .mapToObj(x -> String.format("File_%02d", x))
                 .forEach(System.out::println);
     }
 }
