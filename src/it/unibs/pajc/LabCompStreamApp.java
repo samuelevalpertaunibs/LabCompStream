@@ -7,7 +7,7 @@ public class LabCompStreamApp {
 
         IntStream
                 .range(1, 20)
-                .mapToObj(x -> String.format("File_%02d", x))
+                .mapToObj(x -> String.format("File_%02x", x))
                 .forEach(System.out::println);
     }
 }
